@@ -1,5 +1,10 @@
 <?php
 
+if (!isset($_SESSION['username'])) {
+    header("Location: ../login.php");
+    exit();
+}
+
 require_once('./config.php');
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -67,21 +72,29 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Cadastrar Usuário</title>
 </head>
 <body>
 
-    <h2>Cadastrar Usuário</h2>
+    <div class="content_page">
+        <?php require_once('./sidebar.php') ?>
 
-    <form action="./cad.php" method="post">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="senha">Senha:</label><br>
-        <input type="password" id="senha" name="senha" required><br><br>
-        <input type="submit" value="Cadastrar">
-    </form>
+        <div class="right_page">
+            <h2>Cadastrar Usuário</h2>
+
+            <form action="./cad.php" method="post">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="senha">Senha:</label><br>
+                <input type="password" id="senha" name="senha" required><br><br>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
     
 </body>
 </html>

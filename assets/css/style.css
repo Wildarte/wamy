@@ -46,3 +46,33 @@ button:hover {
     display: flex;
     min-height: 100vh;
 }
+
+
+.content_page{
+    display: flex;
+}
+.sidebar{
+    width: 300px;
+    background-color: #eeeeee;
+    height: 100vh;
+    padding: 10px;
+}
+.right_page{
+    padding: 20px;
+}
+
+.sidebar ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sidebar ul li{
+    width: 100%;
+    display: flex;
+}
+.sidebar ul li a{
+    text-decoration: none;
+    color: #000000;
+    padding: 5px 10px;
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+}

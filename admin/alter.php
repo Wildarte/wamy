@@ -1,5 +1,10 @@
 <?php
 
+if (!isset($_SESSION['username'])) {
+    header("Location: ../login.php");
+    exit();
+}
+
 require_once('./config.php');
 
 // Verifica se os campos foram submetidos via POST
@@ -75,15 +80,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-    <h2>Alterar Credenciais de Acesso</h2>
+    <div class="content_page">
+        <?php require_once('./sidebar.php') ?>
 
-    <form action="alter.php" method="post">
-        <p>
-            <label for="">Nova Senha</label>
-            <input type="password" name="password" id="" value="" placeholder="Nova senha">
-        </p>
-        <input type="submit" value="Atualizar">
-    </form>
+        <div class="right_page">
+            <h2>Alterar Senha</h2>
+
+            <form action="alter.php" method="post">
+                <p>
+                    <label for="">Nova Senha</label>
+                    <input type="password" name="password" id="" value="" placeholder="Nova senha">
+                </p>
+                <input type="submit" value="Atualizar">
+            </form>
+        </div>
+    </div>
+
+    
     
 </body>
 </html>
