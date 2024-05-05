@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     
                 $stmt->bindParam(':nome', $getForm['nome']);
                 $stmt->bindParam(':email', $getForm['email']);
-                $stmt->bindParam(':senha', $getForm['senha']);
+                $stmt->bindParam(':senha', $senhaHash);
     
                 $stmt->execute();
     

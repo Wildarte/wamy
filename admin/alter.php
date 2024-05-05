@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-
     if(in_array("", $form)){
         echo "<script>alert('Preencha todos os campos')</script>";
     }else{
